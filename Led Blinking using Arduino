@@ -1,0 +1,16 @@
+// Define the LED pin
+int ledPin = 13;  //built_in LED is on pin 13
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(ledPin, HIGH); // LED ON
+  delay(5000); // 5 secs delay
+  digitalWrite(ledPin, LOW); // LED OFF
+  delay(5000); // 5 secs delay
+
+}
