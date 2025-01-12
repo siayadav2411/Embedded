@@ -1,0 +1,19 @@
+const int lm35Pin = A0; //LM35 pin output connected to the anaolg pin A0 of arduino
+ 
+void setup(){
+    Serial.begin(9600); // initializae serial communication
+}
+void loop()
+{
+   int analogvalue = analogRead(lm35Pin);    //Read analog value from lm32 output
+   float voltage = analogvalue*(5.0/1023.0); // value multiplied with ratio of refernce voltage to the 10 bit 
+                                                resolution of ADC to convert raw digitalvalue into a real voltage
+   float temperature= voltage*100;           // Convert voltage into temperature
+
+   Serial.print("Temperature: ");            
+   Serial.print(temperature);
+   Serial.println(" °C ");
+
+   delay(5000);   // Wait for 5 seconds
+}
+   
